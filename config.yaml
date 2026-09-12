@@ -1,0 +1,54 @@
+simulation:
+  tick_size: 0.25
+  step_seconds: 0.25
+  turns_per_day: 2000
+  days_to_generate: 1
+
+orderbook:
+  min_depth_ticks: 20
+  refill_decay_tau: 5.0
+  partial_fill_mode: synthetic   # cancel | synthetic | panic
+
+perception:
+  ou_theta: 0.05
+  ou_sigma_quiet: 0.001
+  ou_sigma_normal: 0.005
+  ou_sigma_volatile: 0.02
+  jump_lambda: 0.01
+  jump_mu: 0.0
+  jump_sigma: 0.02
+  regime_transition_matrix: [[0.995,0.005,0.0],[0.01,0.98,0.01],[0.0,0.02,0.98]]
+
+spread:
+  log_ou_mu: 0.7      # ~2 ticki
+  log_ou_theta: 0.1
+  log_ou_sigma: 0.15
+  min_ticks: 1
+  max_ticks: 20
+
+certainty:
+  log_ou_mu: 0.0
+  log_ou_theta: 0.05
+  log_ou_sigma: 0.1
+  clip_min: 0.3
+  clip_max: 2.5
+
+visibility:
+  beta_alpha: 2.0
+  beta_beta: 2.0
+  market_bias: 0.7
+
+volume:
+  open_peak_amp: 3.0
+  open_peak_sigma: 0.05
+  close_peak_amp: 2.5
+  close_peak_sigma: 0.05
+  midday_baseline: 0.5
+  overnight_factor: 0.1
+  overnight_activity: 0.3
+
+eod:
+  close_pct: 0.7
+  limit_levels: 5
+  limit_size: 500
+  keep_ticks: 20

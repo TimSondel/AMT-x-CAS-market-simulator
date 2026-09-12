@@ -1,2 +1,0 @@
-# matplotlib jest opcjonalny – potrzebny tylko do wykresow (--plot / --plot-save)
-matplotlib>=3.5
